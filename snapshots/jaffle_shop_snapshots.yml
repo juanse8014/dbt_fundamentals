@@ -6,7 +6,7 @@ snapshots:
     description: "SCD2 snapshot of customers"
 
     config:
-      schema: SNAPSHOTS
+      schema: PUBLIC
       strategy: check
       unique_key: customer_id
 
