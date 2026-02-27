@@ -1,0 +1,17 @@
+version: 2
+
+snapshots:
+  - name: customers_history
+    relation: ref('stg_jaffle_sho__customers')
+    description: "SCD2 snapshot of customers"
+
+    config:
+      schema: SNAPSHOTS
+      strategy: check
+      unique_key: customer_id
+
+      check_cols:
+        - first_name
+        - last_name
+
+      hard_deletes: invalidate
