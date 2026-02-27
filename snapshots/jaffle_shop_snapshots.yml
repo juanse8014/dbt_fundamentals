@@ -2,7 +2,7 @@ version: 2
 
 snapshots:
   - name: customers_history
-    relation: ref('stg_jaffle_sho__customers')
+    relation: ref('stg_jaffle_shop__customers')
     description: "SCD2 snapshot of customers"
 
     config:
