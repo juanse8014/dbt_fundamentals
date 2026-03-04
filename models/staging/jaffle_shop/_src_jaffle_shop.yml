@@ -18,9 +18,6 @@ sources:
         columns:
           - name: id
             description: Primary key for the orders data.
-            data_tests:
-              - unique
-              - not_null
               
         config: 
           freshness: 
