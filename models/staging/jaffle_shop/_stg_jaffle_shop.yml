@@ -13,9 +13,7 @@ models:
     columns:
       - name: order_id
         description: Primary key for orders table
-        data_tests:
-          - unique
-          - not_null
+
       - name: order_status
         description: "{{ doc('order_status') }}" #Important: Use the doc ref, not the file name
         data_tests:

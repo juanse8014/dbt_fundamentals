@@ -5,6 +5,7 @@ snapshots:
     relation: ref('stg_jaffle_shop__customers')
     description: "SCD2 snapshot of customers"
     config:
+      database: analytics
       schema: snapshots
       hard_deletes: ignore
 
@@ -18,9 +19,10 @@ snapshots:
   - name: orders_history
     relation: ref('stg_jaffle_shop__orders')
     description: "SCD2 Snapshot of Orders"
-
     config: 
-      schema: snapshots
       database: analytics
+      schema: snapshots
       unique_key: order_id
-      strategy: 
+      strategy: timestamp
+      updated_at: last_update
+      hard_deletes: ignore
