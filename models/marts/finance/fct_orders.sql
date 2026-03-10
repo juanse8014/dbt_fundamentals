@@ -1,3 +1,14 @@
+{{
+    config(
+        materialized='incremental',
+        unique_key='order_id',
+        incremental_strategy="microbatch",
+        event_time="order_date",
+        begin="2025-02-13",
+        batch_size="day"
+    )
+}}
+
 with orders as  (
     select * from {{ ref ('stg_jaffle_shop__orders' )}}
 ),
@@ -28,3 +39,7 @@ order_payments as (
 )
 
 select * from final
+{% if is_incremental() %}
+    -- this filter will only be applied on an incremental run
+    where order_date >= (select max(order_date) from {{ this }})  -- "=" can cause duplicates, but in next sections we'll learn how to manage duplicates
+{% endif %}
