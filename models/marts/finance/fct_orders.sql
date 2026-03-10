@@ -2,10 +2,7 @@
     config(
         materialized='incremental',
         unique_key='order_id',
-        incremental_strategy="microbatch",
-        event_time="order_date",
-        begin="2025-02-13",
-        batch_size="day"
+        incremental_strategy="merge"
     )
 }}
 
