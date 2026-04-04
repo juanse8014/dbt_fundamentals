@@ -1,0 +1,7 @@
+macros:
+  - name: cents_to_dollars
+    description: "Macro that converts an amount from cents to dollars"
+    arguments:
+      - name: value
+        type: string
+        description: "The name of the amount field"
