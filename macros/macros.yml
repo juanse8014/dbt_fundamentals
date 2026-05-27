@@ -5,3 +5,12 @@ macros:
       - name: value
         type: string
         description: "The name of the amount field"
+  - name: grant_select
+    description: "Macro that grants select priviliges on schema target.schema to target.role unless otherwise specified"
+    arguments:
+      - name: schema
+        type: string
+        description: "Schema to be granted to the role"
+      - name: role
+        type: string
+        description: "Role we want to grant privs to"
