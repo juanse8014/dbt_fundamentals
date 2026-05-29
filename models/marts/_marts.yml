@@ -1,0 +1,9 @@
+models:
+  - name: dim_customers
+    description: dimension model for customers
+    config: 
+      group: product
+      access: public
+    columns:
+      - name: customer_id
+        description: Primary Key of this model

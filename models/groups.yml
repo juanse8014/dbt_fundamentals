@@ -1,0 +1,9 @@
+groups:
+  - name: finance
+    owner: 
+      name: Martha Prieto
+      email: maryanpri@gmail.com
+  - name: product
+    owner:
+      name: Victor Prieto
+      email: vaprietom@gmail.com    
