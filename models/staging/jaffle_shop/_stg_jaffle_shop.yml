@@ -14,11 +14,9 @@ models:
           
   - name: stg_jaffle_shop__orders
     description: One order per row
-
     config:
       contract:
         enforced: true #Model Contract to ensure the shape of the model
-
     columns:
       - name: order_id
         description: Primary key for orders table
@@ -35,7 +33,13 @@ models:
       - name: order_date
         data_type: date
 
-      - name: order_status
+      - name: days_since_ordered
+        data_type: number
+
+      - name: is_status_pending
+        data_type: boolean
+
+      - name: status
         description: "{{ doc('order_status') }}"
         data_type: varchar
         data_tests:

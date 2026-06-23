@@ -10,8 +10,8 @@ staged as (
         datediff(day,order_date, {{ dbt.current_timestamp() }} ) as days_since_ordered,
         status like '%pending%' as is_status_pending,
         case
-            when status like '%pending%' then 'placed'
             when status like '%return%' then 'returned'
+            when status like '%pending%' then 'placed'
             else status
         end as status,
         _ETL_LOADED_AT as last_update
