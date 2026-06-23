@@ -7,3 +7,19 @@ models:
     columns:
       - name: customer_id
         description: Primary Key of this model
+
+  - name: fct_orders
+    columns:
+      - name: order_id
+        description: "Primary key of order table"
+       
+      - name: customer_id
+        description: "Primary key of customer table"
+       
+      - name: order_date
+        description: "Date of order"
+       
+      - name: amount
+        description: "Amount of articles requested" 
+        data_tests:
+          - greater_than_zero
